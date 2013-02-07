@@ -20,5 +20,5 @@
   (description
    "Guile csv reader")
   (homepage "https://github.com/NalaGinrut/guile-csv/")
-  (libraries "xmlat.scm")
+  (libraries "csv.scm")
   (documentation "README" "COPYING"))
