@@ -86,13 +86,14 @@
   (let* ((csv (reader port))
          (header (map string->symbol (car csv)))
          (contents (cdr csv)))
-    (let lp((rest contents) (result '()))
+    (let lp((rest contents) (result '()) (n 1))
       (cond 
        ((null? rest)
         (call-with-output-string (lambda (p)
                                    (sxml->xml (reverse result) p))))
        (else
-        (let ((line (map list header (car rest))))
-          (lp (cdr rest) (cons line result))))))))
+        (let* ((line (map list header (car rest)))
+               (r (string->symbol (format #f "record-~a" n))))
+          (lp (cdr rest) (cons (list r line)  result) (1+ n))))))))
            
     
