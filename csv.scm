@@ -22,7 +22,8 @@
 
 (define-module (csv)
   #:use-module (ice-9 optargs)
-  #:export (make-csv-reader))
+  #:use-module (sxml simple)
+  #:export (make-csv-reader csv->xml))
 
 ;;; FIXME: rewrite with some kind of parser generator? functional, of
 ;;; course :-) Based on code from Ken Anderson <kanderson bbn com>, from
@@ -76,3 +77,22 @@
   (lambda (port)
     (reverse
      (csv-read port delimiter new-row have-cell have-row init-seed))))
+
+;; read csv file and convert to sxml
+(define* (csv->xml port #:key (delimiter #\,))
+  (define reader (make-csv-reader delimiter
+                                  #:have-row (lambda (row rows)
+                                               (cons (reverse row) rows))))
+  (let* ((csv (reader port))
+         (header (map string->symbol (car csv)))
+         (contents (cdr csv)))
+    (let lp((rest contents) (result '()))
+      (cond 
+       ((null? rest)
+        (call-with-output-string (lambda (p)
+                                   (sxml->xml (reverse result) p))))
+       (else
+        (let ((line (map list header (car rest))))
+          (lp (cdr rest) (cons line result))))))))
+           
+    
