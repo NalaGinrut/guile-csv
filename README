@@ -2,3 +2,13 @@ guile-csv
 =========
 
 Guile csv reader
+
+* usage:
+./configure && make
+sudo make install
+
+(use-modules (csv))
+(define my-csv-reader (make-csv-reader #:\,))
+(call-with-input-file "file.csv" my-csv-reader)
+
+Enjoy!
