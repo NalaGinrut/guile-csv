@@ -3,7 +3,7 @@ guile-csv
 
 Guile csv reader
 
-==USAGE==
+==USAGE
 
 * install
 ./configure && make
@@ -36,6 +36,7 @@ and file.xml could be:
 ```
 
 * sxml->csv or csv-write to output a csv format file
+
 ```scheme
 (call-with-output-file "file.csv"
  (lambda (port)
