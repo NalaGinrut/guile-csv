@@ -15,7 +15,6 @@
 ;;  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (package (csv (0 0 2))
-  (depends (csv))
   (synopsis "Guile csv reader")
   (description
    "Guile csv reader")
