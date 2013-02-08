@@ -23,7 +23,7 @@
 (define-module (csv)
   #:use-module (ice-9 optargs)
   #:use-module (sxml simple)
-  #:export (make-csv-reader csv->xml))
+  #:export (make-csv-reader csv->xml sxml->csv csv-write))
 
 ;;; FIXME: rewrite with some kind of parser generator? functional, of
 ;;; course :-) Based on code from Ken Anderson <kanderson bbn com>, from
@@ -96,4 +96,11 @@
                (r (string->symbol (format #f "record-~a" n))))
           (lp (cdr rest) (cons (list r line)  result) (1+ n))))))))
            
-    
+(define* (sxml->csv sxml port #:key (delimiter #\,))
+  (let* ((d (string delimiter))
+         (csv (map (lambda (l) (string-join l d)) sxml)))
+    (for-each (lambda (l)
+                (format port "~a~%" l))
+              csv)))
+
+(define csv-write sxml->csv)
