@@ -17,7 +17,9 @@ sudo make install
 ```
 
 * csv->xml
+```scheme
 (call-with-input-file "file.xml" csv->xml)
+```
 
 and file.xml could be:
 ```xml
@@ -40,6 +42,7 @@ and file.xml could be:
   (sxml->csv 
    '((name age email) ("aaa" "11" "aaa@aaa.com") ("bbb" "12" "bbb@bbb.com"))
    port)))
+```
 
 and file.csv would be:
 ```csv
