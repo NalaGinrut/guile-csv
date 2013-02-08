@@ -3,20 +3,20 @@ guile-csv
 
 Guile csv reader
 
-==USAGE
+== USAGE
 
-* install
+=== install
 ./configure && make
 sudo make install
 
-* read csv
+=== read csv
 ```scheme
 (use-modules (csv))
 (define my-csv-reader (make-csv-reader #:\,))
 (call-with-input-file "file.csv" my-csv-reader)
 ```
 
-* csv->xml
+=== csv->xml
 ```scheme
 (call-with-input-file "file.xml" csv->xml)
 ```
@@ -35,7 +35,7 @@ and file.xml could be:
 </record-1>
 ```
 
-* sxml->csv or csv-write to output a csv format file
+=== sxml->csv or csv-write to output a csv format file
 
 ```scheme
 (call-with-output-file "file.csv"
