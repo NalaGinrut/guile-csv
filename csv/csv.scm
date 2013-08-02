@@ -20,7 +20,7 @@
 ;; 51 Franklin Street, Fifth Floor    Fax:    +1-617-542-2652
 ;; Boston, MA  02110-1301,  USA       gnu@gnu.org
 
-(define-module (csv)
+(define-module (csv csv)
   #:use-module (ice-9 optargs)
   #:use-module (sxml simple)
   #:export (make-csv-reader csv->xml sxml->csv csv-write))

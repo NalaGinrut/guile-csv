@@ -56,9 +56,9 @@ cscope.files
 *.rn
 *.rns
 *.scan
-*.am
 *.d
 version.scm
 *.m4
 ltmain.sh
 libtool
+env

@@ -20,7 +20,7 @@
 # Fifth Floor, Boston, MA  02110-1301  USA
 
 AC_INIT([guile-csv], [0.0.1], [nalaginrut@gmail.com])
-AC_CONFIG_SRCDIR(csv.scm)
+AC_CONFIG_SRCDIR(csv)
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([color-tests -Wall -Wno-portability])
 AM_SILENT_RULES([yes])
