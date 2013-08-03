@@ -18,10 +18,10 @@ sudo make install
 
 ### csv->xml
 ```scheme
-(call-with-input-file "file.xml" csv->xml)
+(call-with-input-file "file.csv" csv->xml)
 ```
 
-and file.xml could be:
+and result could be:
 ```xml
 <record-0>
  <name>aaa</name>
