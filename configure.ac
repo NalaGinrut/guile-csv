@@ -36,7 +36,7 @@ fi
 
 GUILE_MODULE_REQUIRED([ice-9 optargs])
 
-AC_CONFIG_FILES([Makefile])
+AC_CONFIG_FILES([Makefile csv/Makefile])
 AC_CONFIG_FILES([env], [chmod +x env])
 
 AC_OUTPUT
