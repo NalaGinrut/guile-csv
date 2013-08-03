@@ -1,1 +1,55 @@
-README
+guile-csv
+=========
+
+Guile csv reader
+
+## USAGE
+
+### install
+./configure && make
+sudo make install
+
+### read csv
+```scheme
+(use-modules (csv csv))
+(define my-csv-reader (make-csv-reader #:\,))
+(call-with-input-file "file.csv" my-csv-reader)
+```
+
+### csv->xml
+```scheme
+(call-with-input-file "file.csv" csv->xml)
+```
+
+and result could be:
+```xml
+<record-0>
+ <name>aaa</name>
+ <age>11</age>
+ <email>aaa@aaa.com</email>
+</record-0>
+<record-1>
+ <name>bbb</name>
+ <age>12</age>
+ <email>bbb@bbb.com</email>
+</record-1>
+```
+
+### sxml->csv or csv-write to output a csv format file
+
+```scheme
+(call-with-output-file "file.csv"
+ (lambda (port)
+  (sxml->csv 
+   '((name age email) ("aaa" "11" "aaa@aaa.com") ("bbb" "12" "bbb@bbb.com"))
+   port)))
+```
+
+and file.csv would be:
+```csv
+name,age,email
+aaa,11,aaa@aaa.com
+bbb,12,bbb@bbb.com
+```
+
+Enjoy!
