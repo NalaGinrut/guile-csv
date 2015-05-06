@@ -1,7 +1,6 @@
 config.guess
 config.sub
 config.h.in
-configure
 obj/*
 *.so
 *.o

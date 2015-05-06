@@ -1,6 +1,6 @@
 # configure.ac
 #
-# Copyright (C) 2013 Nala Ginrut <nalaginrut@gmail.com>
+# Copyright (C) 2013-2015 Nala Ginrut <nalaginrut@gmail.com>
 #
 # This file is part of guile-csv.
 #
@@ -19,22 +19,21 @@
 # write to the Free Software Foundation, Inc., 51 Franklin Street,
 # Fifth Floor, Boston, MA  02110-1301  USA
 
-AC_INIT([guile-csv], [0.0.2], [nalaginrut@gmail.com])
+AC_PREREQ([2.65])
+AC_INIT([guile-csv], [0.0.3], [nalaginrut@gmail.com])
 AC_CONFIG_SRCDIR(csv)
 AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([color-tests -Wall -Wno-portability])
 AM_SILENT_RULES([yes])
 
+
+GUILE_PKG([2.2 2.1 2.0])
+PKG_CHECK_MODULES([GUILE], [guile-$GUILE_EFFECTIVE_VERSION >= 2.0.5])
+AC_PATH_PROG([GUILECONFIG], [guile-config], :)
+
 GUILE_PROGS
-
-if $GUILE_TOOLS | grep -q compile; then
-   # everything cool
-   true
-else
-   AC_MSG_ERROR([Guile 2.0 required.])
-fi
-
-GUILE_MODULE_REQUIRED([ice-9 optargs])
+GUILE_FLAGS
+GUILE_SITE_DIR
 
 AC_CONFIG_FILES([Makefile csv/Makefile])
 AC_CONFIG_FILES([env], [chmod +x env])
