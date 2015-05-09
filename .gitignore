@@ -1,5 +1,4 @@
 config.guess
-config.sub
 config.h.in
 obj/*
 *.so
@@ -15,7 +14,6 @@ config.h
 *.la
 aclocal.m4
 depcomp
-missing
 mdate-sh
 texinfo.tex
 *~
@@ -31,7 +29,6 @@ conftest.c
 depcomp
 ltconfig
 mdate-sh
-missing
 mkinstalldirs
 stamp-h1
 *.go
