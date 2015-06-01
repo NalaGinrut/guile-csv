@@ -23,11 +23,12 @@ AC_PREREQ([2.65])
 AC_INIT([guile-csv], [0.0.3], [nalaginrut@gmail.com])
 AC_CONFIG_SRCDIR(csv)
 AC_CONFIG_AUX_DIR([build-aux])
+AC_CONFIG_MACRO_DIR([build-aux])
 AM_INIT_AUTOMAKE([color-tests -Wall -Wno-portability])
 AM_SILENT_RULES([yes])
 
 
-GUILE_PKG([2.2 2.1 2.0])
+GUILE_PKG([2.0 2.1 2.2])
 PKG_CHECK_MODULES([GUILE], [guile-$GUILE_EFFECTIVE_VERSION >= 2.0.5])
 AC_PATH_PROG([GUILECONFIG], [guile-config], :)
 

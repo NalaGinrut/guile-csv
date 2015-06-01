@@ -60,10 +60,9 @@ DIST_COMMON = README $(am__configure_deps) $(srcdir)/Makefile.am \
 	$(top_srcdir)/build-aux/missing $(top_srcdir)/configure \
 	AUTHORS COPYING ChangeLog INSTALL NEWS build-aux/config.guess \
 	build-aux/config.rpath build-aux/config.sub \
-	build-aux/install-sh build-aux/missing
+	build-aux/install-sh build-aux/ltmain.sh build-aux/missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/build-aux/guile.m4 \
-	$(top_srcdir)/configure.ac
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
@@ -191,6 +190,7 @@ ECHO_T = @ECHO_T@
 EGREP = @EGREP@
 EXEEXT = @EXEEXT@
 GREP = @GREP@
+GUILD = @GUILD@
 GUILE = @GUILE@
 GUILECONFIG = @GUILECONFIG@
 GUILE_CFLAGS = @GUILE_CFLAGS@
