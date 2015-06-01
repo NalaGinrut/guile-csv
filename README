@@ -6,7 +6,6 @@ Guile csv reader
 ## USAGE
 
 ### install
-./configure && make
 sudo make install
 
 ### read csv

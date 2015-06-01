@@ -14,7 +14,7 @@
 ;;  You should have received a copy of the GNU General Public License
 ;;  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(package (csv (0 0 2))
+(package (csv (0 0 4))
   (synopsis "Guile csv reader")
   (description
    "Guile csv reader")
