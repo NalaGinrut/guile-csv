@@ -2,7 +2,6 @@ config.h.in
 obj/*
 *.so
 *.o
-Makefile
 .deps
 .libs
 autom4te.cache
